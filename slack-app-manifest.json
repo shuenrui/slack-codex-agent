@@ -1,0 +1,31 @@
+{
+  "display_information": {
+    "name": "Codex on Orange Pi",
+    "description": "Runs Codex CLI in the configured local project workspace.",
+    "background_color": "#1F2937"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "Codex Pi",
+      "always_online": false
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "app_mentions:read",
+        "chat:write"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_mention"
+      ]
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}

@@ -1,0 +1,19 @@
+[Unit]
+Description=Slack to Codex CLI bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=orangepi
+WorkingDirectory=/home/orangepi/slack-codex-agent
+EnvironmentFile=/home/orangepi/slack-codex-agent/.env
+ExecStart=/home/orangepi/slack-codex-agent/.venv/bin/python /home/orangepi/slack-codex-agent/app.py
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
